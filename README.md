@@ -13,12 +13,11 @@ We'll analyze this data using SQLAlchemy, Pandas, and Matplotlib. Finally, we'll
 The repository structure is as follows:
 
 sqlalchemy-challenge/
-├── sqlalchemy-challenge
-│ ├── Resources/
-│ │ ├── hawaii.sqlite
-│ │ ├── hawaii_stations.csv
-│ │ ├── hawaii_measurements.csv
-│ ├── SurfsUP/
+├── Resources/
+│ ├── hawaii.sqlite
+│ ├── hawaii_stations.csv
+│ ├── hawaii_measurements.csv
+├── SurfsUP/
 │ ├── app.py
 │ ├── climate_starter.ipynb
 ├── README.md
@@ -99,17 +98,15 @@ After running `app.py`, you can access the following API endpoints:
 curl http://127.0.0.1:5000/api/v1.0/precipitation
 Stations:
 
-sh
 curl http://127.0.0.1:5000/api/v1.0/stations
 Temperature Observations:
 
-sh
 curl http://127.0.0.1:5000/api/v1.0/tobs
 Temperature Statistics:
 
-sh
 curl http://127.0.0.1:5000/api/v1.0/20170101
 curl http://127.0.0.1:5000/api/v1.0/20170101/20171231
 ```
 
 
+Thanks.
