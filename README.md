@@ -11,7 +11,7 @@ We'll analyze this data using SQLAlchemy, Pandas, and Matplotlib. Finally, we'll
 ## Repository Structure
 
 The repository structure is as follows:
-
+```
 sqlalchemy-challenge/
 ├── Resources/
 │ ├── hawaii.sqlite
@@ -21,7 +21,7 @@ sqlalchemy-challenge/
 │ ├── app.py
 │ └── climate_starter.ipynb
 └── README.md
-
+```
 
 ### Files
 
