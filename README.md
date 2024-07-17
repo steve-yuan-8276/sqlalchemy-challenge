@@ -16,11 +16,11 @@ sqlalchemy-challenge/
 ├── Resources/
 │ ├── hawaii.sqlite
 │ ├── hawaii_stations.csv
-│ ├── hawaii_measurements.csv
+│ └── hawaii_measurements.csv
 ├── SurfsUP/
 │ ├── app.py
-│ ├── climate_starter.ipynb
-├── README.md
+│ └── climate_starter.ipynb
+└── README.md
 
 
 ### Files
