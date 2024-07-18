@@ -109,4 +109,4 @@ curl http://127.0.0.1:5000/api/v1.0/20170101/20171231
 ```
 
 
-Thanks.
+Thanks for your time.
