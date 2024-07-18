@@ -93,19 +93,16 @@ After running `app.py`, you can access the following API endpoints:
 
 ### Example Requests
 
-**Precipitation Data**:
 ```sh
-curl http://127.0.0.1:5000/api/v1.0/precipitation
-Stations:
+http://127.0.0.1:5000/api/v1.0/precipitation
 
-curl http://127.0.0.1:5000/api/v1.0/stations
-Temperature Observations:
 
-curl http://127.0.0.1:5000/api/v1.0/tobs
-Temperature Statistics:
+http://127.0.0.1:5000/api/v1.0/stations
 
-curl http://127.0.0.1:5000/api/v1.0/20170101
-curl http://127.0.0.1:5000/api/v1.0/20170101/20171231
+http://127.0.0.1:5000/api/v1.0/tobs
+
+http://127.0.0.1:5000/api/v1.0/20170101
+http://127.0.0.1:5000/api/v1.0/20170101/20171231
 ```
 
 
