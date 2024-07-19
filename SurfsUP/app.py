@@ -103,45 +103,38 @@ def stations():
     # Create session from python to the DB
     session = Session(engine)
 
-    # query all stations
-    results = session.query(Station.station, Station.name, Station.latitude, Station.longitude, Station.elevation).all()
+    # join stations and measurements table, then query all stations
+    join_results =(
+        session.query(
+            Station.station,
+            Station.name,
+            Station.latitude,
+            Station.longitude,
+            Station.elevation,
+            func.avg(Measurements.prcp).label('avg_prcp'),
+            func.avg(Measurements.tobs).label('avg_tobs')
+        )
+        .join(Measurements, Measurements.station == Station.station)
+        .group_by(Station.station, Station.name)
+        .all()
+    )
     session.close()
 
     # Covert a dictionary from DB and append to a list of stations
     all_stations = []
-    for station, name, lat, long, elev in results:
+    for station, name, lat, long, elev, avg_prcp, avg_tobs in join_results:
         station_dict = {}
         station_dict["station"] = station
         station_dict["name"] = name
         station_dict["latitude"] = lat
         station_dict["longitude"] = long
         station_dict["elevation"] = elev
+        station_dict["Average precipitation"] = round(avg_prcp, 2)
+        station_dict["Average Temperature"] = round(avg_tobs, 2)
         all_stations.append(station_dict)
 
     #display
     return jsonify(all_stations)
-
-@app.route("/api/v1.0/measurements")
-def measurements():
-    # Create session from python to the DB
-    session = Session(engine)
-
-    # query contents
-    results = session.query(Measurements.station, Measurements.date, Measurements.prcp, Measurements.tobs).all()
-    session.close()
-
-    # Covert a dictionary from DB and append to a list of measurements
-    all_measurements = []
-    for station, date, prcp, tobs in results:
-        measurements_dict = {}
-        measurements_dict["station"] = station
-        measurements_dict["date"] = date
-        measurements_dict["prcp"] = prcp
-        measurements_dict["tobs"] = tobs
-        all_measurements.append(measurements_dict)
-
-    # display
-    return jsonify(all_measurements)
 
 @app.route("/api/v1.0/tobs")
 def tobs():
