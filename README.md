@@ -96,12 +96,12 @@ After running `app.py`, you can access the following API endpoints:
 ```sh
 http://127.0.0.1:5000/api/v1.0/precipitation
 
-
 http://127.0.0.1:5000/api/v1.0/stations
 
 http://127.0.0.1:5000/api/v1.0/tobs
 
 http://127.0.0.1:5000/api/v1.0/20170101
+
 http://127.0.0.1:5000/api/v1.0/20170101/20171231
 ```
 
