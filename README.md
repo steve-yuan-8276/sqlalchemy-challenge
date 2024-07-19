@@ -82,7 +82,7 @@ After running `app.py`, you can access the following API endpoints:
     - Date as the key and precipitation as the value.
 
 3. **Stations**: `/api/v1.0/stations`
-    - Returns JSON list of all stations from the dataset.
+    - Returns JSON list of all stations from the dataset,which includes station, name, longitude, latitude,  elevation, Average precipitation,  Average Temperature.
 
 4. **Temperature Observations**: `/api/v1.0/tobs`
     - Returns JSON list of temperature observations of the most-active station for the previous year.
@@ -100,9 +100,9 @@ http://127.0.0.1:5000/api/v1.0/stations
 
 http://127.0.0.1:5000/api/v1.0/tobs
 
-http://127.0.0.1:5000/api/v1.0/20170101
+http://127.0.0.1:5000/api/v1.0/20160101
 
-http://127.0.0.1:5000/api/v1.0/20170101/20171231
+http://127.0.0.1:5000/api/v1.0/20160101/20170601
 ```
 
 
