@@ -129,7 +129,7 @@ def stations():
         station_dict["latitude"] = lat
         station_dict["longitude"] = long
         station_dict["elevation"] = elev
-        station_dict["Average precipitation"] = round(avg_prcp, 2)
+        station_dict["Average Precipitation"] = round(avg_prcp, 2)
         station_dict["Average Temperature"] = round(avg_tobs, 2)
         all_stations.append(station_dict)
 
