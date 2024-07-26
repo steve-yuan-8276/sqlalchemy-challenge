@@ -95,8 +95,12 @@ def precipitation():
         precipitation_dic['prcp'] = prcp
         all_precipitations.append(precipitation_dic)
 
+    # Close the session
+    session.close()
+
     #display
     return jsonify(all_precipitations)
+
 
 @app.route("/api/v1.0/stations")
 def stations():
@@ -118,7 +122,6 @@ def stations():
         .group_by(Station.station, Station.name)
         .all()
     )
-    session.close()
 
     # Covert a dictionary from DB and append to a list of stations
     all_stations = []
@@ -132,6 +135,9 @@ def stations():
         station_dict["Average Precipitation"] = round(avg_prcp, 2)
         station_dict["Average Temperature"] = round(avg_tobs, 2)
         all_stations.append(station_dict)
+
+    # Close the session
+    session.close()
 
     #display
     return jsonify(all_stations)
@@ -184,8 +190,12 @@ def tobs():
         tobs_dict['tobs'] = tobs
         all_tobs.append(tobs_dict)
 
+    # Close the session
+    session.close()
+
     #display
     return jsonify(all_tobs)
+
 
 @app.route("/api/v1.0/<start>", defaults={'end': None})
 @app.route("/api/v1.0/<start>/<end>")
@@ -228,7 +238,11 @@ def selected_date_temp(start, end):
         temp_dict['TAVG'] = round(avg, 2)
         temp_data.append(temp_dict)
 
+    # Close the session
+    session.close()
+
     return jsonify(temp_data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
